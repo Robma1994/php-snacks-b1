@@ -96,7 +96,6 @@
                     'pointsSuffered' => rand(1,100),
                 ]
             ];
-            $rdnNumberPoints = rand(min, max);
             //Stampiamo a schermo tutte le partite con questo schema. Olimpia Milano - Cantù | 55-60
             for ($i = 0; $i < count($teams); $i++) {
                 echo $teams[$i]['homeTeam'] . ' ' . '-' . ' ' . $teams[$i]['visitingTeam'] . ' | ' . $teams[$i]['pointsMade'] . ' - ' . $teams[$i]['pointsSuffered'] . '<br/>';
