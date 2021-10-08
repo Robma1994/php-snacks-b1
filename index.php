@@ -59,7 +59,7 @@
             che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e 
             che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
             */
-            if(empty($mail)) {
+            if( empty($mail) && empty($name) && empty($age)) {
                 echo 'Inserisci Nome - Mail - Age' ;
             } 
             elseif((strlen($name) > 3) && (strpos($mail, '@')) && (strpos($mail, '.')) && (is_numeric($age))) {
