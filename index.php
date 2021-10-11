@@ -62,7 +62,7 @@
             if( empty($name) && empty($mail) && empty($age)) {
                 echo 'Inserisci Nome(almeno 3 caratteri) - Mail(ricorda @ e .) - Age(inserisci un carattere numerico)' ;
             } 
-            
+            //se la @ è in posizione 0 lui la converte in false e se la metti in tale posizione ti da accesso negato quando dovrebbe darti accesso riuscito
             elseif((strlen($name) > 3) && (strpos($mail, '@')) && (strpos($mail, '.')) && (is_numeric($age))) {
                 echo 'Accesso riuscito';
             } 
@@ -97,10 +97,70 @@
                 ]
             ];
             //Stampiamo a schermo tutte le partite con questo schema. Olimpia Milano - Cantù | 55-60
+            $footbalTeam = ['avellino','boltic','cilly'];
+            
             for ($i = 0; $i < count($teams); $i++) {
                 echo $teams[$i]['homeTeam'] . ' ' . '-' . ' ' . $teams[$i]['visitingTeam'] . ' | ' . $teams[$i]['pointsMade'] . ' - ' . $teams[$i]['pointsSuffered'] . '<br/>';
             }
         ?>
+    </div>
+    <div class="snack4">
+        <?php
+    //
+            $posts = [
+
+                '10/01/2019' => [
+                    [
+                        'title' => 'Post 1',
+                        'author' => 'Michele Papagni',
+                        'text' => 'Testo post 1'
+                    ],
+                    [
+                        'title' => 'Post 2',
+                        'author' => 'Michele Papagni',
+                        'text' => 'Testo post 2'
+                    ],
+                ],
+                '10/02/2019' => [
+                    [
+                        'title' => 'Post 3',
+                        'author' => 'Michele Papagni',
+                        'text' => 'Testo post 3'
+                    ]
+                ],
+                '15/05/2019' => [
+                    [
+                        'title' => 'Post 4',
+                        'author' => 'Michele Papagni',
+                        'text' => 'Testo post 4'
+                    ],
+                    [
+                        'title' => 'Post 5',
+                        'author' => 'Michele Papagni',
+                        'text' => 'Testo post 5'
+                    ],
+                    [
+                        'title' => 'Post 6',
+                        'author' => 'Michele Papagni',
+                        'text' => 'Testo post 6'
+                    ]
+                ],
+            ];
+        ?>
+        <?php
+            
+
+            foreach ($posts as $key => $data) {
+               echo $key . ' ' . ' <br/>';
+               foreach($data as $post) {
+                   echo $post['title'] . '<br/>';
+                   echo $post['author'] . '<br/>';
+                   echo $post['text'] . '<br/>';
+               }
+            }
+           
+        ?>
+        
     </div>
 </body>
 </html>
