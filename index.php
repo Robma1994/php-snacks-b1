@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -106,7 +107,7 @@
     </div>
     <div class="snack4">
         <?php
-    //
+ 
             $posts = [
 
                 '10/01/2019' => [
@@ -161,6 +162,46 @@
            
         ?>
         
+    </div>
+    <div class="snack5">
+        <?php
+            //Creare un array con 15 numeri casuali ( da 1 a 100), tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
+            $number = [];
+            $rndNumber = rand (1,100);
+
+            //while(count($number) < 15) {
+                
+            //}
+            
+        ?>
+    </div>
+    <div class="snack6">
+        <?php
+            $nome = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque dolore impedit quod distinctio libero in blanditiis ducimus pariatur, iste saepe debitis cupiditate quasi inventore eveniet eaque, fugit aspernatur facere magni.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque dolore impedit quod distinctio libero in blanditiis ducimus pariatur, iste saepe debitis cupiditate quasi inventore eveniet eaque, fugit aspernatur facere magni.';
+            $newArray = explode('.', $nome);
+            //stampa l'array
+        ?>
+    </div>
+    <div class="snack7 mT mL">
+        <?php
+            //Stampara gli insegnanti in un rettangolo grigrio.
+                include __DIR__ . '/dataBase.php';
+                
+                foreach($db as $key => $array) {
+                    if($key == 'teachers') {
+                        foreach($array as $key => $element) {
+                            echo '<div class="red">' . $element['name'] . ' ' . $element['lastname'] . '<br/>' . '</div>';   
+                        
+                        }
+                    } else {
+                        foreach($array as $key => $element) {
+                            echo '<div class="green">' . $element['name'] . ' ' . $element['lastname'] . '<br/>' . '</div>';   
+                        }
+                    }
+                    
+                }
+            //Stampare i pm in un rettangolo verde.
+        ?>
     </div>
 </body>
 </html>

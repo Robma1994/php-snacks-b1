@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mT {
+    margin-top: 30px;
+}
+.mL {
+    margin-left: 50px;
+}
+.red {
+    color: gray;
+}
+
+.green {
+    color: green;
+}
