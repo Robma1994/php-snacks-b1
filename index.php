@@ -167,12 +167,15 @@
         <?php
             //Creare un array con 15 numeri casuali ( da 1 a 100), tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
             $number = [];
-            $rndNumber = rand (1,100);
-
-            //while(count($number) < 15) {
-                
-            //}
             
+
+            while(count($number) < 15) {
+                $rndNumber = rand (1,100);
+                if(!in_array($rndNumber,$number)) {
+                    $number[] = $rndNumber;
+                }
+            }
+            var_dump($number);
         ?>
     </div>
     <div class="snack6">
@@ -201,6 +204,18 @@
                     
                 }
             //Stampare i pm in un rettangolo verde.
+        ?>
+    </div>
+    <div class="snack8">
+        <?php
+            //Creare un array contenente qualche alunno di un’ipotetica classe. 
+            //Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici.   
+             //Stampare Nome, Cognome e la media dei voti di ogni alunno.
+             include __DIR__ . '/partials/dataBaseAlunni.php';
+             include __DIR__ . '/partials/utilities.php';
+        foreach($alunni as $key => $element) {
+            echo $element['nome'] . ' ' . $element['cognome'] . ' ' . media($element['voti']) . '<br/>';   
+        }
         ?>
     </div>
 </body>
